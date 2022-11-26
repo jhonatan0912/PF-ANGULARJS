@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from "@angular/router";
-import {  HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -28,7 +29,9 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ], exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
