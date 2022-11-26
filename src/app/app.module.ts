@@ -8,11 +8,12 @@ import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from "@angular/router";
 import {  HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'users', component: UsersComponent },
-  // { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent }
 ]
 
 @NgModule({
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    UsersComponent
+    UsersComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
