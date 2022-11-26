@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from "@angular/router";
+import {  HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './components/users/users.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  // { path: 'users', component: UsersComponent },
+  { path: 'users', component: UsersComponent },
   // { path: 'contact', component: ContactComponent }
 ]
 
@@ -17,12 +19,14 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ], exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
