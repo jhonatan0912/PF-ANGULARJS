@@ -26,7 +26,6 @@ export class ContactComponent implements OnInit {
 
   send() {
     console.log(this.user);
-
   }
 
 }

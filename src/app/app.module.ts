@@ -7,14 +7,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
-import { UsersComponent } from './components/users/users.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductsComponent } from './components/products/products.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'products', component: ProductsComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '**', component: HomeComponent }
 ]
 
 @NgModule({
@@ -22,8 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    UsersComponent,
-    ContactComponent
+    ContactComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
