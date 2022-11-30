@@ -26,7 +26,7 @@ export class ContactComponent implements OnInit {
   }
 
   send() {
-    console.log(this.user);
+    // console.log(this.user);
   }
 
   showModal() {

@@ -1,15 +1,16 @@
 <div class="container">
-  <form (ngSubmit)="send()" #form="ngForm" class="flex flex-col w-2/5 m-auto mt-4">
+  <form (ngSubmit)="send()" #form="ngForm" class="flex flex-col w-4/5 lg:w-3/5 m-auto mt-4">
     <h1 class="text-4xl font-semibold">Contact Form</h1>
 
     <label for="name" class="mt-3">
       <p>Name</p>
-      <input type="text" name="name" id="name" class="form-control" #name="ngModel" [(ngModel)]="user.name">
+      <input type="text" name="name" id="name" class="form-control" #name="ngModel" [(ngModel)]="user.name" required>
     </label>
 
     <label for="email" class="mt-3">
       <p>Email</p>
-      <input type="text" name="email" id="email" class="form-control" #email="ngModel" [(ngModel)]="user.email">
+      <input type="text" name="email" id="email" class="form-control" #email="ngModel" [(ngModel)]="user.email"
+        required>
     </label>
     <label for="message" class="mt-3">
       <p>Message</p>
