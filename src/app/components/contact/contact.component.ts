@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2'
 
 interface UserForm {
   name: String;
@@ -28,4 +29,12 @@ export class ContactComponent implements OnInit {
     console.log(this.user);
   }
 
+  showModal() {
+    Swal.fire({
+      title: 'Success',
+      text: 'Gracias por contactarnos!',
+      icon: 'success',
+      confirmButtonText: 'CLOSE'
+    })
+  }
 }

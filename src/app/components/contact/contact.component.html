@@ -16,6 +16,6 @@
       <textarea name="message" id="message" cols="30" rows="10" class="form-control" #message="ngModel"
         [(ngModel)]="user.message"></textarea>
     </label>
-    <button class="btn btn-danger mt-3">Send</button>
+    <button class="btn btn-danger mt-3" (click)="showModal()">Send</button>
   </form>
 </div>
