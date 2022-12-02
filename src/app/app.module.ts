@@ -11,6 +11,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MenComponent } from './components/men/men.component';
+import { WomenComponent } from './components/women/women.component';
+import { KidsComponent } from './components/kids/kids.component';
+import { NavProductsComponent } from './components/nav-products/nav-products.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,7 +30,11 @@ const appRoutes: Routes = [
     HomeComponent,
     ContactComponent,
     ProductsComponent,
-    FooterComponent
+    FooterComponent,
+    MenComponent,
+    WomenComponent,
+    KidsComponent,
+    NavProductsComponent
   ],
   imports: [
     BrowserModule,
