@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2'
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-interface UserForm {
-  name: String;
-  email: String;
-  message: String;
-}
 
 @Component({
   selector: 'app-contact',
@@ -14,27 +10,35 @@ interface UserForm {
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  contactForm: FormGroup;
+  contactSuccess: any;
+
+  constructor(public fb: FormBuilder) {
+    this.contactForm = fb.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      message: ['', Validators.required],
+    })
+  }
 
   ngOnInit(): void {
-  }
 
-  user: UserForm = {
-    name: "",
-    email: "",
-    message: "",
-  }
 
-  send() {
-    // console.log(this.user);
   }
 
   showModal() {
-    Swal.fire({
-      title: 'Success',
-      text: 'Gracias por contactarnos!',
-      icon: 'success',
-      confirmButtonText: 'CLOSE'
-    })
+    console.log(this.contactForm.value.name);
+    if (this.contactForm.value.name == '' && this.contactForm.value.name == '' && this.contactForm.value.name == '') {
+      this.contactSuccess = false;
+    } else {
+      Swal.fire({
+        title: 'Success',
+        text: 'Gracias por contactarnos!',
+        icon: 'success',
+        confirmButtonText: 'CLOSE'
+      })
+      this.contactSuccess = true;
+    }
+
   }
 }
