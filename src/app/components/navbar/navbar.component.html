@@ -1,7 +1,22 @@
-<nav class="flex bg-zinc-800 text-white gap-5 text-2xl p-4 items-center">
-  <ul class="flex gap-3">
-    <li><a href="/home">Home</a></li>
-    <li><a href="/products">Products</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
+<nav class="flex justify-between items-center gap-5 text-xl p-4 border">
+  <div class="logo sections flex items-center gap-3">
+    <a href="/"><img src="/assets/logo.svg" alt="logo"></a>
+    <ul class="flex gap-3">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="flex gap-3">
+    <div class="search relative flex items-center">
+      <input type="search" placeholder="Search" class="border outline-none text-base">
+      <i class="fa fa-search absolute right-0 text-base"></i>
+    </div>
+    <div class="options flex gap-3">
+      <i class="fa fa-user"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-shopping-bag"></i>
+    </div>
+  </div>
 </nav>
