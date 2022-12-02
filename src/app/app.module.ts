@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './components/products/products.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     HomeComponent,
     ContactComponent,
-    ProductsComponent
+    ProductsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
