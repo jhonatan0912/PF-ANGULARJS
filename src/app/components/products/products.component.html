@@ -1,10 +1,13 @@
 <app-nav-products></app-nav-products>
 <div class="container grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 my-5">
   <div class="card p-3" *ngFor="let product of productsList">
-    <img class="cursor-pointer" src="https://jhonatan0912.github.io/PF-ADVANCED-JS/{{product.img}}"
-      alt="{{product.name}}">
+    <div class="image-container relative">
+      <i class="far fa-heart heart absolute"></i>
+      <img class="cursor-pointer" src="https://jhonatan0912.github.io/PF-ADVANCED-JS/{{product.img}}"
+        alt="{{product.name}}">
+        <p class="price absolute">S/{{product.price}}</p>
+    </div>
     <p> {{product.name}}</p>
-    <p>S/{{product.price}}</p>
     <p><span>{{product.colorStock}}</span>&nbsp;<small class="font-bold">{{product.deliveryStatus}}</small>
     </p>
     <button class="btn btn-success d-block m-auto mt-3 hover:scale-105">Shop now!</button>
