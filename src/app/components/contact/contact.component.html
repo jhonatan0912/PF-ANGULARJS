@@ -1,6 +1,5 @@
 <div class="container">
-  <form [formGroup]="contactForm" (ngSubmit)="showModal()" #form="ngForm"
-    class="flex flex-col w-4/5 lg:w-3/5 m-auto mt-4">
+  <form [formGroup]="contactForm" (ngSubmit)="send()" #form="ngForm" class="flex flex-col w-4/5 lg:w-3/5 m-auto mt-4">
     <h1 class="text-4xl font-semibold">Contact Form</h1>
 
     <label for="name" class="mt-3">
@@ -10,7 +9,7 @@
 
     <label for="email" class="mt-3">
       <p>Email</p>
-      <input class="form-control" type="text" name="email" formControlName="email" #email required="required">
+      <input class="form-control" type="email" name="email" formControlName="email" #email required="required">
     </label>
     <label for="message" class="mt-3">
       <p>Message</p>

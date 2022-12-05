@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import Swal from 'sweetalert2'
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+
 
 
 @Component({
@@ -10,15 +11,14 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class ContactComponent implements OnInit {
 
-  contactForm: FormGroup;
-  contactSuccess: any;
+  contactForm: FormGroup = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.email),
+    message: new FormControl('', Validators.required)
+  });
+
 
   constructor(public fb: FormBuilder) {
-    this.contactForm = fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      message: ['', Validators.required],
-    })
   }
 
   ngOnInit(): void {
@@ -26,19 +26,22 @@ export class ContactComponent implements OnInit {
 
   }
 
-  showModal() {
-    console.log(this.contactForm.value.name);
-    if (this.contactForm.value.name == '' && this.contactForm.value.name == '' && this.contactForm.value.name == '') {
-      this.contactSuccess = false;
-    } else {
+  send() {
+    console.log(this.contactForm);
+    if (this.contactForm.status != "INVALID") {
       Swal.fire({
         title: 'Success',
         text: 'Gracias por contactarnos!',
         icon: 'success',
         confirmButtonText: 'CLOSE'
       })
-      this.contactSuccess = true;
+    } else {
+      Swal.fire({
+        title: 'Error',
+        text: 'Verifique los campos y vuelva a intentarlo',
+        icon: 'error',
+        confirmButtonText: 'CLOSE'
+      })
     }
-
   }
 }
