@@ -16,6 +16,11 @@ import { MenComponent } from './components/men/men.component';
 import { WomenComponent } from './components/women/women.component';
 import { KidsComponent } from './components/kids/kids.component';
 import { NavProductsComponent } from './components/nav-products/nav-products.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -47,7 +52,11 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ], exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
